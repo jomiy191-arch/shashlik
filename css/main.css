@@ -1,0 +1,194 @@
+/* Reset va asosiy o'rnatmalar */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --red: #b71c2b;
+  --white: #ffffff;
+  --container: 1200px;
+  --gap: 40px;
+}
+body{
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--red);
+  color: var(--white);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+.container{
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
+.site-header { padding: 28px 0; }
+.header-inner { display:flex; align-items:center; justify-content:space-between; gap: 20px; }
+.logo { height: 36px; display:block; }
+.nav a { color: var(--white); margin-right: 18px; text-decoration: none; font-size: 14px; }
+.btn-login {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 8px 12px;
+  border-radius: 20px;
+  color: var(--white);
+}
+
+/* Hero */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 40px 0;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: var(--gap);
+  align-items: center;
+  width: 100%;
+}
+.hero-content { max-width: 560px; }
+.eyebrow { font-size: 13px; opacity: 0.95; margin-bottom: 16px; letter-spacing: 0.6px; }
+.hero-title {
+  font-size: 56px;
+  line-height: 1.02;
+  margin-bottom: 18px;
+  font-weight: 800;
+  font-family: "Baloo 2", system-ui, sans-serif;
+}
+.hero-desc { font-size: 14px; opacity: 0.95; margin-bottom: 26px; max-width: 420px; }
+.btn-primary {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.25);
+  text-decoration: none;
+  color: var(--white);
+}
+
+/* Rasm konteyneri */
+.hero-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* faqat bezak, interaktiv emas */
+}
+.shashlik{
+  width: 100%;
+  height: 100%;
+  border-radius: 40%;
+}
+/* Orqa doira / pattern - KATTA va orqada */
+.hero-decor {
+  position: absolute;
+  right: -40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 520px;
+  height: auto;
+  z-index: 1;
+  opacity: 0.95;
+  filter: drop-shadow(0 18px 30px rgba(0,0,0,0.25));
+}
+
+/* Shashlik oldida - yuqori z-index */
+.shashlik {
+  position: relative;
+  max-width: 480px;
+  height: auto;
+  z-index: 2;
+  transform: translateX(8%);
+}
+
+/* Scroll indikator (vertical) */
+.scroll-indicator {
+  position: absolute;
+  right: 36px;
+  bottom: 36px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  opacity: 0.6;
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .hero-grid { grid-template-columns: 1fr 420px; }
+  .hero-decor { width: 420px; right: -24px; }
+  .shashlik { max-width: 380px; transform: translateX(4%); }
+  .hero-title { font-size: 46px; }
+}
+@media (max-width: 760px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 24px; }
+  .hero-image-wrap { height: 340px; margin-top: 10px; }
+  .hero-decor { right: 8%; top: 40%; width: 360px; opacity: 0.9; }
+  .shashlik { max-width: 320px; transform: translateX(0); }
+  .hero-title { font-size: 36px; }
+}
+@media (max-width: 420px) {
+  .hero-title { font-size: 28px; }
+  .hero-desc { font-size: 13px; }
+  .hero-decor { width: 260px; top: 50%; right: 6%; }
+  .shashlik { max-width: 260px; }
+  .nav a { display: none; }
+}
+
+.nav a,
+.btn-login,
+.btn-primary,
+.logo,
+.shashlik,
+.hero-decor,
+.hero-title {
+  transition: all 0.3s ease;
+}
+
+
+.nav a:hover {
+  color: #ffe07b;
+  text-shadow: 0 0 6px rgba(255,224,123,0.6);
+}
+
+
+.btn-login:hover {
+  background: blue;
+  color: var(--red);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+
+.btn-primary:hover {
+  background: blue;
+  color: var(--red);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+
+.logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.25));
+}
+
+
+.shashlik:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 12px 18px rgba(0,0,0,0.35));
+}
+
+
+.hero-decor:hover {
+  transform: scale(1.05) rotate(2deg);
+  opacity: 0.85;
+  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.35));
+}
+
+
+.hero-title:hover {
+  color: #ffe07b;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
