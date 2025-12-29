@@ -1,7 +1,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 :root{
-  --red: #000000;
+  --red: #b71c2b;
   --white: #ffffff;
   --container: 1200px;
   --gap: 40px;
