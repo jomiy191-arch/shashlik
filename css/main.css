@@ -156,7 +156,7 @@ body{
 
 
 .btn-login:hover {
-  background: rgb(43, 43, 85);
+  background: blue;
   color: var(--red);
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
@@ -184,7 +184,7 @@ body{
 .hero-decor:hover {
   transform: scale(1.05) rotate(2deg);
   opacity: 0.85;
-  filter: drop-shadow(0 8px 16px rgba(0,0,0,0.35));
+  filter: drop-shadow(0 8px 16px rgba(175, 103, 103, 0.35));
 }
 
 
